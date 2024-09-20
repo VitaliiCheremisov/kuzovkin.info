@@ -1,4 +1,4 @@
-import constants
+from kpolyakov import constants
 import re
 import requests
 import time
@@ -13,7 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from urllib3.exceptions import NewConnectionError, MaxRetryError
-
+from selenium.webdriver.common.by import By
 # Путь к хром-драйверу указывается на каждом локальном компьютере отдельно
 chrome_driver_path = "/usr/bin/chromedriver"
 driver = webdriver.Chrome(service=Service(chrome_driver_path))
@@ -194,7 +194,7 @@ def get_task_answer(table, soup, task_number):
 
 def push_data_to_excel_file(result):
     """Отправляем данные в excel_file."""
-    file_path = "Информатика.xlsx"
+    file_path = "../Информатика.xlsx"
     try:
         wb = load_workbook(file_path)
         ws = wb.active
